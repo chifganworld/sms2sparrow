@@ -152,10 +152,10 @@
 	});
 	app.get ("/getsms", function (req,res,next)
 	{
-		
+		var currentDate=new Date().toJSON();
 		//reportSentToRapidPro(res);
 		//reportSentToRapidPro(res);
-		console.log("Campain logged!!!!");
+		console.log(""+currentDate+"| Campain logged!!!!");
 		console.log("----------------- >>>");
 		//console.log(req);
 		res.json('{"response":"callback url called"}');
