@@ -1,0 +1,25 @@
+{
+  "launch_path": "/src/app.js",
+  "default_locale": "en",
+  "activities": {
+    "SMSAPI": {
+      "url": "http://api.sparrowsms.com/v2/sms",
+      "token": "xxxxxxxxxxTokenxxxxxxxxxx",
+      "shortcode": "xxxxx"
+    },
+    "rapidpro": {
+      "url": "http://localhost:8083/api/v2",
+      "secureUrl": "https://ngrok.io/handlers/external",
+      "uid": "xxxxxxxxxxxuidxxxxxxxxxxxx",
+      "token": "xxxxxxxxxxTokenxxxxxxxxxx"
+    }
+  },
+  "appType": "APP",
+  "simulationMode": "on",
+  "name": "SMS2RP Exch app",
+  "version": "1.0.0",
+  "description": "App for exchanging SMS between rapidpro and SMS sparrow API",
+  "developer": {
+    "name": "Gerard Bisama"
+  }
+}
