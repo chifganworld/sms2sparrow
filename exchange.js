@@ -157,7 +157,7 @@
 		//reportSentToRapidPro(res);
 		console.log("Campain logged!!!!");
 		console.log("----------------- >>>");
-		console.log(req);
+		//console.log(req);
 		res.json('{"response":"callback url called"}');
 		return res.end();
 		
