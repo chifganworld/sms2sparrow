@@ -152,14 +152,36 @@
 	});
 	app.get ("/getsms", function (req,res,next)
 	{
+		var from="";
+		var to="";
+		var keyword="";
+		var text="";
+		from=req.from;
+		to=req.to;
+		keyword=req.keyword;
+		text=req.text;
+		var stringParams=""+from+"| "+to+"| "+keyword+"| "+text;
 		var currentDate=new Date().toJSON();
 		//reportSentToRapidPro(res);
 		//reportSentToRapidPro(res);
-		console.log(""+currentDate+"| Campain logged!!!!");
+		console.log(""+currentDate+"| "+stringParams+"| Campain logged!!!!");
 		console.log("----------------- >>>");
+		dao.saveReceivedSMS(null,from,text,to,function(resBD)
+		{
+			if(resBD==true)
+			{
+				console.log("Success: SMS logged in the DB");
+			}
+			else
+			{
+				console.log("Fail: SMS not logged in the DB");
+			}
+			return res.end();
+		});
 		//console.log(req);
-		res.json('{"response":"callback url called"}');
-		return res.end();
+		//res.json('{"response":"callback url called"}');
+		//return res.end();
+		
 		
 	});
 
