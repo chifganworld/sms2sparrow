@@ -99,6 +99,7 @@
 			}
 			else
 			{
+				console.log("No messages in pending");
 				res.json('{"response":"No messages in pending"}');
 				return res.end();
 			}
@@ -159,6 +160,7 @@
 			}
 			else
 			{
+				console.log("No messages in pending");
 				res.json('{"response":"No messages in pending"}');
 				return res.end();
 			}
