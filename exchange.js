@@ -152,6 +152,14 @@
 	});
 	app.get ("/getsms", function (req,res,next)
 	{
+		var currentDate=new Date().toJSON();
+		//reportSentToRapidPro(res);
+		//reportSentToRapidPro(res);
+		console.log(""+currentDate+"| "+"| Campain logged!!!!");
+		console.log("----------------- >>>");
+		console.log(req.body);
+		return res.end();
+		/*
 		var from="";
 		var to="";
 		var keyword="";
@@ -161,11 +169,7 @@
 		keyword=req.keyword;
 		text=req.text;
 		var stringParams=""+from+"| "+to+"| "+keyword+"| "+text;
-		var currentDate=new Date().toJSON();
-		//reportSentToRapidPro(res);
-		//reportSentToRapidPro(res);
-		console.log(""+currentDate+"| "+stringParams+"| Campain logged!!!!");
-		console.log("----------------- >>>");
+		
 		dao.saveReceivedSMS(null,from,text,to,function(resBD)
 		{
 			if(resBD==true)
@@ -181,6 +185,7 @@
 		//console.log(req);
 		//res.json('{"response":"callback url called"}');
 		//return res.end();
+		* */
 		
 		
 	});
