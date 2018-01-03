@@ -243,5 +243,19 @@
 		});
 		return res.end();
 	});
+	app.get ("/getReceivedSMS", function (req,res,next)
+	{
+		dao.getListReceivedSMS(function(listSMS)
+		{
+			if(listSMS!=null)
+			{
+				var oSMS=listSMS;
+				res.json(oSMS)
+			}
+			return res.end();
+		});
+				
+		
+	});
 
 }).call(this);
