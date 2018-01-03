@@ -105,6 +105,50 @@
 		});
 		
 	}
+	function reportReceivedSMSToRapidpro(res)
+	{
+		dao.getListReceivedSMS(function(listSMS)
+		{
+			if(listSMS!=null)
+			{
+				var oSMS=listSMS;
+				exchangeAPI.notifyReceivedSMS(oSMS.from,oSMS.text,oSMS.dateSent,function(resRP)
+				{
+					//console.log(resRP[0]);
+					if(resRP[0].response=="SMS Status Updated")
+					{
+						dao.editSMS(oSMS.id,1,function (resSB)
+						{
+							if(resSB==true)
+							{
+								console.log("Success "+oSMS.id+": SMS updated in the DB")
+								//res.js('{"Success":"SMS updated in the DB"}');
+							}
+							else
+							{
+								console.log("Fail: SMS not updated in the DB");
+								//res.send('{"Fail":"SMS not updated in the DB"}');
+							}
+							res.json('{"response":"message updated in rapidPro"}');
+							return res.end();
+						});
+					}
+					else
+					{
+						
+					}
+					
+				});
+			}
+			else
+			{
+				res.json('{"response":"No messages in pending"}');
+				return res.end();
+			}
+			
+		});
+		
+	}
 	function reportSentToRapidPro2(res)
 	{
 		dao.getListSMS2();
@@ -155,22 +199,24 @@
 		var currentDate=new Date().toJSON();
 		//reportSentToRapidPro(res);
 		//reportSentToRapidPro(res);
-		console.log(""+currentDate+"| "+"| Campain logged!!!!");
-		console.log("----------------- >>>");
-		console.log(req.body);
-		return res.end();
-		/*
+		//console.log(""+currentDate+"| "+"| Campain logged!!!!");
+		//console.log("----------------- >>>");
+		//console.log(req);
+		//return res.end();
+		
 		var from="";
 		var to="";
 		var keyword="";
 		var text="";
-		from=req.from;
-		to=req.to;
-		keyword=req.keyword;
-		text=req.text;
+		from=req.query.from;
+		to=req.query.to;
+		keyword=req.query.keyword;
+		text=req.query.text;
 		var stringParams=""+from+"| "+to+"| "+keyword+"| "+text;
+		console.log(""+currentDate+"| "+stringParams+"| Campain logged!!!!");
+		console.log("----------------- >>>");
 		
-		dao.saveReceivedSMS(null,from,text,to,function(resBD)
+		dao.saveReceivedSMS(from,text,to,function(resBD)
 		{
 			if(resBD==true)
 			{
@@ -185,9 +231,17 @@
 		//console.log(req);
 		//res.json('{"response":"callback url called"}');
 		//return res.end();
-		* */
 		
 		
+		
+	});
+	app.get ("/testincrement", function (req,res,next)
+	{
+		dao.saveReceivedSMS('+243810890810','sms text','3660',function(resdB)
+		{
+			console.log(resdB)
+		});
+		return res.end();
 	});
 
 }).call(this);
