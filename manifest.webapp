@@ -15,6 +15,7 @@
     }
   },
   "appType": "APP",
+  "smsKeyword": "sms2",
   "simulationMode": "on",
   "name": "SMS2RP Exch app",
   "version": "1.0.0",

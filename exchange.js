@@ -5,6 +5,7 @@
   var bodyParser = require('body-parser');
   var exchangeAPI =require ("./lib/api");
   var dao =require ("./lib/dao");
+  var smsKeyWord=exchangeAPI.getSMSKeyWord();
 	function errorHandler(err, req, res, next) {
 	  if (res.headersSent) {
 		return next(err);
@@ -105,6 +106,19 @@
 		});
 		
 	}
+	//the keyword is supposed to be at the beginning of the sms
+	function removeKeyWordFormSMS(_text)
+	{
+		var rebuiltSMS="";
+		var lowerCaseString=_text.toLowerCase();
+		var resSplit=lowerCaseString.split(smsKeyWord);
+		for(var i=0;i<resSplit.length;i++)
+		{
+			rebuiltSMS+=resSplit[i];
+		}
+		return rebuiltSMS;
+		
+	}
 	function reportReceivedSMSToRapidpro(res)
 	{
 		dao.getListReceivedSMS(function(listSMS)
@@ -112,16 +126,18 @@
 			if(listSMS!=null)
 			{
 				var oSMS=listSMS;
-				exchangeAPI.notifyReceivedSMS(oSMS.from,oSMS.text,oSMS.dateSent,function(resRP)
+				//console.log(oSMS);
+				var rebuiltSMS=removeKeyWordFormSMS(oSMS.text);
+				exchangeAPI.notifyReceivedSMS(oSMS.from,rebuiltSMS,oSMS.dateSent,function(resRP)
 				{
-					//console.log(resRP[0]);
-					if(resRP[0].response=="SMS Status Updated")
+					//console.log(resRP[0].response.trim());
+					if(resRP[0].response.includes("SMS Accepted")==true)
 					{
-						dao.editSMS(oSMS.id,1,function (resSB)
+						dao.editReceivedSMS(oSMS.id_sparrow,function (resSB)
 						{
 							if(resSB==true)
 							{
-								console.log("Success "+oSMS.id+": SMS updated in the DB")
+								console.log("Success "+oSMS.id_sparrow+": SMS updated in the DB")
 								//res.js('{"Success":"SMS updated in the DB"}');
 							}
 							else
@@ -135,7 +151,7 @@
 					}
 					else
 					{
-						
+						console.log("Error :"+resRP[0].response);
 					}
 					
 				});
@@ -235,6 +251,7 @@
 		
 		
 	});
+	/*
 	app.get ("/testincrement", function (req,res,next)
 	{
 		dao.saveReceivedSMS('+243810890810','sms text','3660',function(resdB)
@@ -242,7 +259,8 @@
 			console.log(resdB)
 		});
 		return res.end();
-	});
+	});*/
+	/*
 	app.get ("/getReceivedSMS", function (req,res,next)
 	{
 		dao.getListReceivedSMS(function(listSMS)
@@ -257,5 +275,14 @@
 				
 		
 	});
+	* */
+	app.get ("/pushsms2rp", function (req,res,next)
+	{
+		
+		//reportSentToRapidPro(res);
+		reportReceivedSMSToRapidpro(res);
+		
+	});
+	
 
 }).call(this);
