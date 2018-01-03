@@ -128,7 +128,8 @@
 				var oSMS=listSMS;
 				//console.log(oSMS);
 				var rebuiltSMS=removeKeyWordFormSMS(oSMS.text);
-				exchangeAPI.notifyReceivedSMS(oSMS.from,rebuiltSMS,oSMS.dateSent,function(resRP)
+				var dateSent=oSMS.dateSent.toISOString();
+				exchangeAPI.notifyReceivedSMS(oSMS.from,rebuiltSMS,dateSent,function(resRP)
 				{
 					//console.log(resRP[0].response.trim());
 					if(resRP[0].response.includes("SMS Accepted")==true)
