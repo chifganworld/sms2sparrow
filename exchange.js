@@ -20,10 +20,13 @@
   app.use(errorHandler);server = app.listen(process.env.PORT || 8084, function() {
     return console.log("SMS2Sparrow exchange is running on port:" + (server.address().port));
   });
-  
 	function sendSMS(from,text,to,id,res)
 	{
-		exchangeAPI.SendSMS(from,text,to,id,function(resAPI)
+		//escapedText=toUTF8(text);
+		var escapedText=encodeURIComponent(text);
+		var cleanedText=escapedText.replace(/\%2B/g, '+');
+		//console.log("########: "+cleanedText+" ######");
+		exchangeAPI.SendSMS(from,cleanedText,to,id,function(resAPI)
 		{
 			//console.log("Send report: "+resAPI);
 			//res.json(resAPI);
@@ -202,6 +205,7 @@
 		console.log("To:"+req.to);
 		console.log("To:"+req.id);
 		* */
+		//var encodedText=encodeURIComponent();
 		
 		sendSMS(req.from,req.text,req.to,req.id,res);
 		
@@ -263,7 +267,7 @@
 		});
 		return res.end();
 	});*/
-	/*
+	
 	app.get ("/getReceivedSMS", function (req,res,next)
 	{
 		dao.getListReceivedSMS(function(listSMS)
@@ -278,7 +282,7 @@
 				
 		
 	});
-	* */
+	
 	app.get ("/pushsms2rp", function (req,res,next)
 	{
 		
