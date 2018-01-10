@@ -22,10 +22,19 @@
   });
 	function sendSMS(from,text,to,id,res)
 	{
+		var escapedText="";
+		var cleanedText="";
 		//escapedText=toUTF8(text);
-		var escapedText=encodeURIComponent(text);
-		var cleanedText=escapedText.replace(/\%2B/g, '+');
-		//console.log("########: "+cleanedText+" ######");
+		if(exchangeAPI.getSupportSpecialCharset()==true)
+		{
+			escapedText=encodeURIComponent(text);
+			cleanedText=escapedText.replace(/\%2B/g, '+');
+		}
+		else
+		{
+			cleanedText=text;
+		}
+		console.log("########: "+cleanedText+" ######");
 		exchangeAPI.SendSMS(from,cleanedText,to,id,function(resAPI)
 		{
 			//console.log("Send report: "+resAPI);

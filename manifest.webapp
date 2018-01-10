@@ -4,19 +4,20 @@
   "activities": {
     "SMSAPI": {
       "url": "http://api.sparrowsms.com/v2/sms",
-      "token": "xxxxxxxxxxTokenxxxxxxxxxx",
-      "shortcode": "xxxxx"
+      "token": "inuOsw4BKZVoB8cRxYlc",
+      "shortcode": "36040"
     },
     "rapidpro": {
       "url": "http://localhost:8083/api/v2",
-      "secureUrl": "https://ngrok.io/handlers/external",
-      "uid": "xxxxxxxxxxxuidxxxxxxxxxxxx",
-      "token": "xxxxxxxxxxTokenxxxxxxxxxx"
+      "secureUrl": "https://694bc1c4.ngrok.io/handlers/external",
+      "uid": "ab9cb30e-9db4-4e47-9933-ad8a581b8103",
+      "token": "31363edb281394b599365d75a3ddaaa67115e862"
     }
   },
   "appType": "APP",
   "smsKeyword": "sms2",
   "simulationMode": "on",
+  "supportSpecialCharset": "off",
   "name": "SMS2RP Exch app",
   "version": "1.0.0",
   "description": "App for exchanging SMS between rapidpro and SMS sparrow API",
