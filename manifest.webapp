@@ -4,7 +4,7 @@
   "activities": {
     "SMSAPI": {
       "url": "http://api.sparrowsms.com/v2/sms",
-      "token": "xxxxtokenxxxxxx",
+      "token": "xxxxTokenxxxxxx",
       "shortcode": "xxxxx"
     },
     "rapidpro": {
