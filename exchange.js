@@ -111,7 +111,7 @@
 			}
 			else
 			{
-				console.log("No messages in pending");
+				console.log("No messages sent to notify in pending");
 				res.json('{"response":"No messages in pending"}');
 				return res.end();
 			}
@@ -175,7 +175,7 @@
 			}
 			else
 			{
-				console.log("No messages in pending");
+				console.log("No incoming messages in pending");
 				res.json('{"response":"No messages in pending"}');
 				return res.end();
 			}
@@ -279,7 +279,7 @@
 		});
 		return res.end();
 	});*/
-	
+	/*
 	app.get ("/getReceivedSMS", function (req,res,next)
 	{
 		dao.getListReceivedSMS(function(listSMS)
@@ -294,6 +294,7 @@
 				
 		
 	});
+	* */
 	
 	app.get ("/pushsms2rp", function (req,res,next)
 	{
