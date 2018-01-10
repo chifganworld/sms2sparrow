@@ -4,14 +4,14 @@
   "activities": {
     "SMSAPI": {
       "url": "http://api.sparrowsms.com/v2/sms",
-      "token": "inuOsw4BKZVoB8cRxYlc",
-      "shortcode": "36040"
+      "token": "xxxxtokenxxxxxx",
+      "shortcode": "xxxxx"
     },
     "rapidpro": {
       "url": "http://localhost:8083/api/v2",
-      "secureUrl": "https://694bc1c4.ngrok.io/handlers/external",
-      "uid": "ab9cb30e-9db4-4e47-9933-ad8a581b8103",
-      "token": "31363edb281394b599365d75a3ddaaa67115e862"
+      "secureUrl": "https://temba.ngrok.io/handlers/external",
+      "uid": "xxxxxxxxxxxuidxxxxxxxxxxxxxx",
+      "token": "xxxxxxxxxxxxxtokenxxxxxxxxxxx"
     }
   },
   "appType": "APP",
