@@ -134,8 +134,8 @@
 	}
 	function reportReceivedSMSToRapidpro(res)
 	{
-		//dao.getListReceivedSMS(function(listSMS)
-		exchangeAPI.getListReceivedSMS(function(listSMS)
+		dao.getListReceivedSMS(function(listSMS)
+		//exchangeAPI.getListReceivedSMS(function(listSMS)
 		{
 			if(listSMS!=null)
 			{
