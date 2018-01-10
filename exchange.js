@@ -134,14 +134,17 @@
 	}
 	function reportReceivedSMSToRapidpro(res)
 	{
-		dao.getListReceivedSMS(function(listSMS)
+		//dao.getListReceivedSMS(function(listSMS)
+		exchangeAPI.getListReceivedSMS(function(listSMS)
 		{
 			if(listSMS!=null)
 			{
 				var oSMS=listSMS;
-				//console.log(oSMS);
+				console.log(oSMS.dateSent);
 				var rebuiltSMS=removeKeyWordFormSMS(oSMS.text);
-				var dateSent=oSMS.dateSent.toISOString();
+				//console.log("####rebuilt sms :"+rebuiltSMS);
+				var tempDateSent=new Date(""+oSMS.dateSent);
+				var dateSent=tempDateSent.toISOString();
 				exchangeAPI.notifyReceivedSMS(oSMS.from,rebuiltSMS,dateSent,function(resRP)
 				{
 					//console.log(resRP[0].response.trim());
