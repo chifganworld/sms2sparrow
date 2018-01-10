@@ -10,14 +10,14 @@
     "rapidpro": {
       "url": "http://localhost:8083/api/v2",
       "secureUrl": "https://temba.ngrok.io/handlers/external",
-      "uid": "xxxxxxxxxxxuidxxxxxxxxxxxxxx",
-      "token": "xxxxxxxxxxxxxtokenxxxxxxxxxxx"
+      "uid": "xxxxxxxxxxxUuidxxxxxxxxxxxxxx",
+      "token": "xxxxxxxxxxxxxTokenxxxxxxxxxxx"
     }
   },
   "appType": "APP",
   "smsKeyword": "sms2",
   "simulationMode": "on",
-  "supportSpecialCharset": "off",
+  "supportSpecialCharset": "on",
   "name": "SMS2RP Exch app",
   "version": "1.0.0",
   "description": "App for exchanging SMS between rapidpro and SMS sparrow API",
