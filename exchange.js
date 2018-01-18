@@ -111,7 +111,7 @@
 			}
 			else
 			{
-				console.log("No messages sent to notify in pending");
+				//console.log("No messages sent to notify in pending");
 				res.json('{"response":"No messages in pending"}');
 				return res.end();
 			}
@@ -175,7 +175,7 @@
 			}
 			else
 			{
-				console.log("No incoming messages in pending");
+				//console.log("No incoming messages in pending");
 				res.json('{"response":"No messages in pending"}');
 				return res.end();
 			}
