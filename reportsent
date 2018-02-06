@@ -1,0 +1,5 @@
+for COUNT in `seq 8` ; do
+  curl http://ip:port/reportsent
+  sleep 9
+done
+
