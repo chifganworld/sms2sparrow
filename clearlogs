@@ -1,5 +1,5 @@
 FOLDER=/home/ubuntu/sms2apps/logs/
-LOGFILEBKP=sms2.`date "+%d-%m-%Y"`.log
+LOGFILEBKP=sms2_`date "+%d-%m-%Y"`.log
 LOGFILE=sms2.log
 cp $FOLDER$LOGFILE $FOLDER$LOGFILEBKP
->> $LOGFILE
+cat /dev/null > $LOGFILE
