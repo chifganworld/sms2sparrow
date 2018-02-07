@@ -1,9 +1,10 @@
 # sms2sparrow
 Allows [RapidPro](http://docs.rapidpro.io/) to connect to [Sparrow SMS](http://docs.sparrowsms.com/en/latest/), an SMS aggregator in Nepal for sending flow SMS on client mobile phone. 
 ## Installation
-###Ubuntu
+
+### Ubuntu
 This solution is deployed on ubuntu 14.04 or 16.04.
-###RapidPro
+### RapidPro
 Based on some issues on the compatibility of RapidPro API, it is advised to use the rapidpro source of the version committed by june 2017. This is the rapidPro used during the developpement of this solution. If your rapidPro server has been installed during or before this period you may not need to install a new instance.
 But if you are facing challenges during the channel configuration step, you could consider to install a new instance and checkout the source to the specific sha-1 commit.
 Follow step on [install rapidPro](https://rapidpro.github.io/rapidpro/docs/development/), after cloning rapidpro from github, checkout the specific version of source by running the command below to get the version of june 2017.
@@ -67,7 +68,7 @@ npm start
 The service is exposed on the port 8084 (this could be changed)
 
 ## Service configuration
-###Create the rapidPro channel
+### Create the rapidPro channel
 Go to [create channel](http://docs.rapidpro.io/#article_687096) and choose "External API", then provide information to the following fields
 ```sh
 URN Type:Phone number
