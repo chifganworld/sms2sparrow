@@ -85,6 +85,14 @@ Received URL https://temba.ngrok.io/handlers/external/received/axxxxe-9db4-4e47-
 ### Add callback url to sparrow
 To be able to access incoming messages, ones should create a campaign in sparrow and add the this "http://serverIP:8084/getsms".
 
+### Task to Synch info between rapidPro and Sparrow SMS
+Sending SMS, receiving SMS are async task. The app store need to notify rapidPro when the message sent is delivered or if there is new incoming message in the queue. so there is 2 script file create for that purpose and they just perform curl on specifics URI on time basis (5-9 seconds)
+Add this entries to you crontab
+```sh
+* * * * * /pathtorepo/sms2apps/sms2sparrow/pushsms2rp > /dev/null &
+* * * * * /pathtorepo/sms2apps/sms2sparrow/reportsent > /dev/null &
+```
+
 Taratataaa
 
 
