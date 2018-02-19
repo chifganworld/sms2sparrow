@@ -1,5 +1,5 @@
-for COUNT in `seq 8` ; do
-  curl http://ip:port/reportsent
-  sleep 9
+for COUNT in `seq 5` ; do
+  curl http://localhost:8084/reportsent
+  sleep 6
 done
 

@@ -1,5 +1,5 @@
-for COUNT in `seq 4` ; do
-  curl http://ip:port/pushsms2rp
-  sleep 5
+for COUNT in `seq 2` ; do
+  curl http://localhost:8084/pushsms2rp
+  sleep 3
 done
 

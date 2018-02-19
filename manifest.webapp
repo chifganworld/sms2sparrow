@@ -3,20 +3,21 @@
   "default_locale": "en",
   "activities": {
     "SMSAPI": {
-      "url": "http://api.sparrowsms.com/v2/sms",
-      "token": "xxxxTokenxxxxxx",
+      "url": "http://<ip:port>/sms",
+      "token": "xxxxxxxxxxxxxxxxxx",
       "shortcode": "xxxxx"
     },
     "rapidpro": {
       "url": "http://localhost:8083/api/v2",
       "secureUrl": "https://temba.ngrok.io/handlers/external",
-      "uid": "xxxxxxxxxxxUuidxxxxxxxxxxxxxx",
-      "token": "xxxxxxxxxxxxxTokenxxxxxxxxxxx"
+      "uid": "xxxxxxxxxxxxxxxxxx,
+      "token": "xxxxxxxxxxxxxxxxxxxxxxxxxxx"
     }
   },
   "appType": "APP",
   "smsKeyword": "sms2",
-  "simulationMode": "on",
+  "simulationMode": "off",
+  "useSMSAPISimulator": "on",
   "supportSpecialCharset": "on",
   "name": "SMS2RP Exch app",
   "version": "1.0.0",

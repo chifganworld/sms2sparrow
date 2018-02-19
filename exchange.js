@@ -303,6 +303,13 @@
 		reportReceivedSMSToRapidpro(res);
 		
 	});
+	app.get ("/delcollection", function (req,res,next)
+	{
+		
+		//reportSentToRapidPro(res);
+		dao.deleteSMSCollection();
+		
+	});
 	
 
 }).call(this);
