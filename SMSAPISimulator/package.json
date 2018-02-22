@@ -1,0 +1,29 @@
+{
+    "name": "SparrowSimulator",
+    "description": "App to simulate sparrow SMS for rapidPro testing",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+		"start": "node simulator.js"
+    },
+    "dependencies": {
+       
+    },
+    "author": "Gerard",
+	"license": "BSD-3-Clause",
+    "keywords": [
+    "DHIS2",
+    "App"
+  ],
+    "devDependencies": {
+		"express": "^4.14.1",
+		"xmlhttprequest":"^1.8.0",
+		"body-parser":"1.17.2"
+    },
+    "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gerard-bisama/SMS2Exchange.git"
+	},
+	"homepage": "https://github.com/gerard-bisama/SMS2Exchange.git#readme"
+  
+}

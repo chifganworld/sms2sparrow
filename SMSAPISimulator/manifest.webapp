@@ -1,0 +1,21 @@
+{
+  "launch_path": "simulator.js",
+  "default_locale": "en",
+  "activities": {
+    "SMSAPI": {
+      "callbackurl": "http://<sms2parrowIP>:<port>",
+      "token": "cv88sssssssssss",
+      "shortcode": "xxxxx"
+    }
+  },
+  "appType": "APP",
+  "smsKeyword": "keyword",
+  "simulationMode": "on",
+  "supportSpecialCharset": "on",
+  "name": "SMS API Simulator",
+  "version": "1.0.0",
+  "description": "App to simulate External SMS API for RapidPro",
+  "developer": {
+    "name": "Gerard Bisama"
+  }
+}
