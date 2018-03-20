@@ -250,19 +250,21 @@
 		var stringParams=""+from+"| "+to+"| "+keyword+"| "+text;
 		console.log(""+currentDate+"| "+stringParams+"| Campain logged!!!!");
 		console.log("----------------- >>>");
-		
-		dao.saveReceivedSMS(from,text,to,function(resBD)
+		if(from!="undefined" && text!="undefined")
 		{
-			if(resBD==true)
+			dao.saveReceivedSMS(from,text,to,function(resBD)
 			{
-				console.log("Success: SMS logged in the DB");
-			}
-			else
-			{
-				console.log("Fail: SMS not logged in the DB");
-			}
-			return res.end();
-		});
+				if(resBD==true)
+				{
+					console.log("Success: SMS logged in the DB");
+				}
+				else
+				{
+					console.log("Fail: SMS not logged in the DB");
+				}
+				return res.end();
+			});
+		}
 		//console.log(req);
 		//res.json('{"response":"callback url called"}');
 		//return res.end();
