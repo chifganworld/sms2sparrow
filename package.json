@@ -1,31 +1,32 @@
 {
-    "name": "SMS2RP_Exch_app",
-    "description": "App for exchanging SMS between rapidpro and SMS sparrow API",
-    "version": "1.0.0",
-    "private": true,
-    "scripts": {
-		"start": "node exchange.js"
-    },
-    "dependencies": {
-       
-    },
-    "author": "Gerard",
-	"license": "BSD-3-Clause",
-    "keywords": [
+  "name": "SMS2RP_Exch_app",
+  "description": "App for exchanging SMS between rapidpro and SMS sparrow API",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node exchange.js"
+  },
+  "dependencies": {
+    "forever-monitor": "^1.7.1",
+    "moment": "^2.22.1",
+    "nodemailer": "^4.6.4"
+  },
+  "author": "Gerard",
+  "license": "BSD-3-Clause",
+  "keywords": [
     "DHIS2",
     "App"
   ],
-    "devDependencies": {
-		"express": "^4.14.1",
-		"xmlhttprequest":"^1.8.0",
-		"body-parser":"1.17.2",
-		"mongodb": "^2.2.11",
-		"mongoose": "^4.6.8"
-    },
-    "repository": {
+  "devDependencies": {
+    "express": "^4.14.1",
+    "xmlhttprequest": "^1.8.0",
+    "body-parser": "1.17.2",
+    "mongodb": "^2.2.11",
+    "mongoose": "^4.6.8"
+  },
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/gerard-bisama/SMS2Exchange.git"
-	},
-	"homepage": "https://github.com/gerard-bisama/SMS2Exchange.git#readme"
-  
+  },
+  "homepage": "https://github.com/gerard-bisama/SMS2Exchange.git#readme"
 }
